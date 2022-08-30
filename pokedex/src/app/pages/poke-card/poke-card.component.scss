@@ -1,0 +1,268 @@
+@import "../../../styles.scss";
+
+.container {
+  display: flexbox;
+  box-sizing: border-box;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  background: #c34c43;
+  font-family: $font;
+}
+
+.loading{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: white;
+  font-size: 3rem;
+}
+
+.card {
+  display: flexbox;
+  background: #d8e5ea;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  min-height: 480px;
+
+  &__img-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+    &-img {
+      margin-top: 5px;
+      height: 15rem;
+      background: url("../../../assets/img/pokemon-battle-bg.jpg") round;
+      border-radius: 20px;
+    }
+  }
+
+  &__pokeData {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    &-type-list {
+      width: 45%;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 5px
+    }
+    &-type {
+      width: 100%;
+      color: white;
+      font-size: 1.5rem;
+      background: grey;
+      text-align: center;
+      border-radius: 35px;
+      box-sizing: border-box;
+      padding: 0.4rem;
+    }
+
+    &-type-electric {
+      background: $pokeType-electric;
+    }
+    &-type-bug {
+      background: $pokeType-bug;
+    }
+    &-type-dark {
+      background: $pokeType-dark;
+    }
+    &-type-dragon {
+      background: $pokeType-dragon;
+    }
+    &-type-fairy {
+      background: $pokeType-fairy;
+    }
+    &-type-fighting {
+      background: $pokeType-fighting;
+    }
+    &-type-fire {
+      background: $pokeType-fire;
+    }
+    &-type-flying {
+      background: $pokeType-flying;
+    }
+    &-type-ghost {
+      background: $pokeType-ghost;
+    }
+    &-type-grass {
+      background: $pokeType-grass;
+    }
+    &-type-ground {
+      background: $pokeType-ground;
+    }
+    &-type-ice {
+      background: $pokeType-ice;
+    }
+    &-type-normal {
+      background: $pokeType-normal;
+    }
+    &-type-poison {
+      background: $pokeType-poison;
+    }
+    &-type-psychic {
+      background: $pokeType-psychic;
+    }
+    &-type-rock {
+      background: $pokeType-rock;
+    }
+    &-type-steel {
+      background: $pokeType-steel;
+    }
+    &-type-water {
+      background: $pokeType-water;
+    }
+  }
+
+  &__pokeInfo {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    background-color: white;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    box-sizing: border-box;
+    padding: 20px;
+    border-radius: 23px;
+    font-size: 1.3rem;
+    font-weight: bold;
+
+    &-fields {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 5px 15px 5px 15px;
+      border-radius: 20px;
+
+      &-hp {
+        color: white;
+        background-color: $red-primary;
+        margin-top: 24px;
+      }
+      &-attack {
+        color: white;
+        background-color: $attackBar;
+        margin-top: 24px;
+      }
+      &-defense {
+        color: white;
+        background-color: $defenseBar;
+        margin-top: 24px;
+      }
+      &-speed {
+        color: white;
+        background-color: $speedBar;
+        margin-top: 24px;
+      }
+    }
+  }
+
+  &__return {
+    display: flex;
+    font-size: 1rem;
+    height: 30%;
+    color: white;
+    justify-content: center;
+    position: absolute;
+    top:0;
+    left:0;
+    margin-top: 40px;
+    margin-left: 40px;
+
+    &-button {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      height: 1.4rem;
+      width: 1.4rem;
+      background: $red-primary;
+      border-radius: 10px;
+      padding: 10px;
+      color: white;
+      &-img {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .loading{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-size: 1rem;
+    &-img{
+      height: 10rem;
+      width: 10rem;
+    }
+  }
+  .card {
+    &__img-container-img {
+      height: 7rem;
+    }
+
+    &__pokeData-type{
+      font-size: 1rem;
+    }
+    &__pokeInfo {
+      display: flex;
+      flex-direction: column;
+      width: 95%;
+      background-color: white;
+      margin-top: 10px;
+      margin-bottom: 25px;
+      box-sizing: border-box;
+      padding: 20px;
+      border-radius: 23px;
+      font-size: 1rem;
+
+      &-fields {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 5px 15px 5px 15px;
+        border-radius: 20px;
+
+        &-hp {
+          color: white;
+          background-color: $red-primary;
+          margin-top: 5px;
+        }
+        &-attack {
+          color: white;
+          background-color: $attackBar;
+          margin-top: 5px;
+        }
+        &-defense {
+          color: white;
+          background-color: $defenseBar;
+          margin-top: 5px;
+        }
+        &-speed {
+          color: white;
+          background-color: $speedBar;
+          margin-top: 5px;
+        }
+      }
+    }
+  }
+}

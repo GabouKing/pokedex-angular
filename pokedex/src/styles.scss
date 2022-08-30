@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Inspiration&family=Orbitron&display=swap');
+$red-primary: #BC3937;
+$red-bg: #C34C43;
+$ligth-grey-searchBar: #D8E5EA;
+$font: 'Orbitron',sans-serif;
+
+//Cores das barras
+$attackBar: #FDC707;
+$defenseBar: #02C6F1;
+$speedBar: #14830A;
+
+// Variaveis para os tipos de pokemon
+$pokeType-bug: #8a990d ;
+$pokeType-dark: #513c2f ;
+$pokeType-dragon: #725bda ;
+$pokeType-electric: #e79302 ;
+$pokeType-fairy: #e08ee0 ;
+$pokeType-fighting: #602310 ;
+$pokeType-fire: #c82200 ;
+$pokeType-flying: #5c73d3 ;
+$pokeType-ghost: #464694 ;
+$pokeType-grass: #3ea006 ;
+$pokeType-ground: #b59235 ;
+$pokeType-ice: #6dd3f5 ;
+$pokeType-normal: #a29b8b ;
+$pokeType-poison: #6d2570 ;
+$pokeType-psychic: #dc3165 ;
+$pokeType-rock: #a1883e ;
+$pokeType-steel: #8e8e9f ;
+$pokeType-water  : #0c67c2 ;
+
+
+
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+input{
+  outline: none;
+}
+body{
+  height: 91vh;
+  background-color: $red-bg;
+}

@@ -1,0 +1,17 @@
+$red-primary: #BC3937;
+$red-bg: #C34C43;
+$ligth-grey-searchBar: #D8E5EA;
+
+.footer{
+    background: $red-primary;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    width: 100%;
+    height: 25px;
+    position: fixed;
+    font-size: 14px;
+    font-family: sans-serif;
+}

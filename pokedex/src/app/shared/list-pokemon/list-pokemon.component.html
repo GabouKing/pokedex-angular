@@ -1,0 +1,45 @@
+<app-header (emmitSearch)="findPokemon($event)"></app-header>
+<div class="container">
+  <div class="loading" *ngIf="!getListPokemon">
+    <img
+      class="loading-img"
+      src="../../../assets/img/pikachuLoading.gif"
+      alt="Erro ao apresentar o pokemon"/>
+    <p class="loading-img-text">Buscando pokémons</p>
+  </div>
+  <section class="list" *ngIf="getListPokemon">
+    <ng-template ngFor let-pokemon [ngForOf]="getListPokemon" class="template">
+      <a
+        [routerLink]="['pokeDetails', pokemon.status.id]"
+        class="poke__item"
+        *ngIf="pokemon.status">
+        <div class="poke__item-image-container">
+          <img
+            [src]="
+              pokemon.status?.sprites.versions['generation-v']['black-white']
+                .animated.front_default"
+            [alt]="pokemon.name"
+            class="poke__item-image-container-image"/>
+        </div>
+        <div class="poke__item-container-data">
+          <div class="poke__item-type-container">
+            <ul class="poke__item-type-list">
+              <li
+                *ngFor="let value of pokemon.status.types"
+                class="poke__item-type poke__item-type-{{ value.type.name }}">
+                {{ value.type.name }}
+              </li>
+            </ul>
+          </div>
+          <div class="poke__item-container-data-pokeName">
+            <p>{{ pokemon.name }}</p>
+          </div>
+          <div class="poke__item-container-data-pokedexNumber">
+            <p>Pokedéx N°:</p>
+            <p>{{ pokemon.status.id }}</p>
+          </div>
+        </div>
+      </a>
+    </ng-template>
+  </section>
+</div>

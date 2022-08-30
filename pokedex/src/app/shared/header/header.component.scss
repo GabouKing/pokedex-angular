@@ -1,0 +1,69 @@
+@import "../../../styles.scss";
+
+.header {
+  position: absolute;
+  left: 0;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  width: 100%;
+  background: $red-primary;
+  box-sizing: border-box;
+
+  &__pokeHome {
+    height: 50px;
+    &:hover {
+      transition: 1s;
+      cursor: pointer;
+      transform: rotate(360deg);
+    }
+  }
+
+  &__search-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 5px;
+    &-img {
+      width: 30px;
+      height: 50px;
+      background-color: $ligth-grey-searchBar;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+      padding-right: 5px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__pokeSearch {
+    padding: 0, 25rem;
+    background-color: $ligth-grey-searchBar;
+    border-radius: 10px;
+    border: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: $font;
+    width: 100%;
+    height: 50px;
+    max-width: 543px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .header {
+    flex-direction: column;
+
+    &__pokeHome {
+      margin-bottom: 10px;
+    }
+
+    &__pokeSearch {
+      margin: 0;
+    }
+  }
+}

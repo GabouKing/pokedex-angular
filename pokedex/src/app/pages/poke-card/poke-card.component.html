@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="loading" *ngIf="!pokemon; else loaded">
+    <img
+      class="loading-img"
+      src="../../../assets/img/pikachuLoading.gif"
+      alt="Erro ao apresentar o pokemon"/>
+    <p class="loading-img-text">Buscando pokémon</p>
+  </div>
+  <ng-template #loaded>
+    <div class="card" *ngIf="pokemon && pokemon[0]">
+      <div class="card__img-container">
+        <img
+          [src]="
+            pokemon[0].sprites.versions['generation-v']['black-white'].animated
+              .front_default"
+          alt="Pokemon Gif"
+          class="card__img-container-img"/>
+      </div>
+      <div class="card__pokeData">
+        <h1 class="card__pokeData-name">{{ pokemon[0].name }}</h1>
+        <ul
+          class="card__pokeData-type-list"
+          *ngFor="let value of pokemon[0].types">
+          <li>
+            <div
+              class="card__pokeData-type card__pokeData-type-{{
+                value.type.name
+              }}">
+              <p class="card__pokedata-type-text">{{ value.type.name }}</p>
+            </div>
+          </li>
+        </ul>
+
+        <div class="card__pokeInfo">
+          <div class="card__pokeInfo-fields card__pokeInfo-fields-hp">
+            <p class="card__pokeInfo-fields-text">HP</p>
+            <p class="card__pokeInfo-fields-text">
+              {{ pokemon[0].stats[0].base_stat }}
+            </p>
+          </div>
+          <div class="card__pokeInfo-fields card__pokeInfo-fields-attack">
+            <p class="card__pokeInfo-fields-text">Attack</p>
+            <p class="card__pokeInfo-fields-text">
+              {{ pokemon[0].stats[1].base_stat }}
+            </p>
+          </div>
+          <div class="card__pokeInfo-fields card__pokeInfo-fields-defense">
+            <p class="card__pokeInfo-fields-text">Defense</p>
+            <p class="card__pokeInfo-fields-text">
+              {{ pokemon[0].stats[2].base_stat }}
+            </p>
+          </div>
+          <div class="card__pokeInfo-fields card__pokeInfo-fields-speed">
+            <p class="card__pokeInfo-fields-text">Speed</p>
+            <p class="card__pokeInfo-fields-text">
+              {{ pokemon[0].stats[5].base_stat }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="card__return">
+        <a class="card__return-button" [routerLink]="['']">
+          <img
+            src="../../../assets/icons/arrow-back-outline.svg"
+            alt="Ícone de retorno"
+            class="card__return-button-img"/>
+        </a>
+      </div>
+    </div>
+  </ng-template>
+</div>
